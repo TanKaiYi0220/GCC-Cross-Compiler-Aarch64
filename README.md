@@ -79,7 +79,7 @@ This step will build GCC's C and C++ cross-compiler only, and install them to `/
 ```
 mkdir -p build-gcc
 cd build-gcc
-../gcc-4.9.2/configure --prefix=/opt/cross --target=aarch64-linux --enable-languages=c,c++ --disable-multilib
+../gcc-8.3.0/configure --prefix=/opt/cross --target=aarch64-linux --enable-languages=c,c++ --disable-multilib
 make -j$(nproc) all-gcc
 make install-gcc
 cd ..
@@ -137,11 +137,11 @@ If everything build successfully, let us check our cross-compiler for a dial ton
 aarch64-linux-g++ -v
 Using built-in specs.
 COLLECT_GCC=aarch64-linux-g++
-COLLECT_LTO_WRAPPER=/opt/cross/libexec/gcc/aarch64-linux/4.9.2/lto-wrapper
+COLLECT_LTO_WRAPPER=/opt/cross/libexec/gcc/aarch64-linux/8.3.0/lto-wrapper
 Target: aarch64-linux
-Configured with: ../gcc-4.9.2/configure --prefix=/opt/cross --target=aarch64-linux --enable-languages=c,c++ --disable-multilib
+Configured with: ../gcc-8.3.0/configure --prefix=/opt/cross --target=aarch64-linux --enable-languages=c,c++ --disable-multilib
 Thread model: posix
-gcc version 4.9.2 (GCC)
+gcc version 8.3.0 (GCC)
 ```
 
 We can compile the C++14 program `hello.c++`, then disassemble it:
